@@ -8,3 +8,12 @@ C:\Users\Dell\source\repos\Library Management System\Library Management System\o
 C:\Users\Dell\source\repos\Library Management System\Library Management System\obj\x64\Debug\Library Management System.exe
 C:\Users\Dell\source\repos\Library Management System\Library Management System\obj\x64\Debug\Library Management System.pdb
 C:\Users\Dell\source\repos\Library Management System\Library Management System\obj\x64\Debug\Library Management System.csprojResolveAssemblyReference.cache
+C:\Users\Dell\Documents\GitHub\SC-Lab2\Library Management System\bin\x64\Debug\Library Management System.exe.config
+C:\Users\Dell\Documents\GitHub\SC-Lab2\Library Management System\bin\x64\Debug\Library Management System.exe
+C:\Users\Dell\Documents\GitHub\SC-Lab2\Library Management System\bin\x64\Debug\Library Management System.pdb
+C:\Users\Dell\Documents\GitHub\SC-Lab2\Library Management System\obj\x64\Debug\Library_Management_System.Form1.resources
+C:\Users\Dell\Documents\GitHub\SC-Lab2\Library Management System\obj\x64\Debug\Library_Management_System.Properties.Resources.resources
+C:\Users\Dell\Documents\GitHub\SC-Lab2\Library Management System\obj\x64\Debug\Library Management System.csproj.GenerateResource.Cache
+C:\Users\Dell\Documents\GitHub\SC-Lab2\Library Management System\obj\x64\Debug\Library Management System.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\GitHub\SC-Lab2\Library Management System\obj\x64\Debug\Library Management System.exe
+C:\Users\Dell\Documents\GitHub\SC-Lab2\Library Management System\obj\x64\Debug\Library Management System.pdb
