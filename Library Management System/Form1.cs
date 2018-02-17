@@ -180,5 +180,61 @@ namespace Library_Management_System
         {
 
         }
+        
+        //function to update fine
+        //needs to be called when a user logs in and pass userID into it
+        public void update_fine(string user_id)
+        {
+            /*Connect with Database.*/
+            OleDbConnection dbcon = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data source=C:\\Users\\Zara\\Downloads\\SC-Lab2-master\\SC-Lab2-master\\Library-db.mdb; Persist Security Info=False;");
+            dbcon.Open();
+            OleDbCommand my_command = new OleDbCommand("select * from tblIssue where UserID = 'CG905'", dbcon);
+            DateTime Issue_Date;
+            DateTime Last_Updated;
+            var dateAndTime = DateTime.Now;
+            var current_date = dateAndTime.Date;
+            OleDbCommand sqlcommand = new OleDbCommand("select * from tblArtifacts where Type = 'Book'", dbcon);
+            OleDbDataReader rd = my_command.ExecuteReader(); // Execute the sql command and store the results in a reader object
+
+            while (rd.Read())
+            {
+                Issue_Date = rd.GetDateTime(2);
+                Last_Updated = rd.GetDateTime(4);
+                var fine = rd.GetDecimal(3);
+                var artifact = rd.GetString(0);
+
+
+                if (Last_Updated.Month < current_date.Month && (current_date - Issue_Date).Days > 30)
+                {
+                    //find out if book orjournal
+                    OleDbCommand command1 = new OleDbCommand("select Type from tblArtifacts where ArtifactID = '" + artifact + "'", dbcon);
+                    OleDbDataReader r = command1.ExecuteReader();
+                    while (r.Read())
+                    {
+
+                        if (r.GetString(0) == "Journal")
+                        {
+                            fine = fine + 100;
+                        }
+                        else if (r.GetString(0) == "Book")
+                        {
+                            fine = fine + 50;
+                        }
+                    }
+
+
+                    //update cost
+                    OleDbCommand command = new OleDbCommand(@"UPDATE tblIssue
+                                                    SET LastUpdated = @p1,
+                                                        Fines = @p2
+                                                    WHERE UserID = @p3", dbcon);
+
+                    command.Parameters.AddWithValue("@p1", current_date);
+                    command.Parameters.AddWithValue("@p2", fine);
+                    command.Parameters.AddWithValue("@p3", user_id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        
     }
 }
